@@ -1,12 +1,16 @@
-name: Basic CI
-
-on: 
+name: Developing is Done
+on:
   push:
-    branches: [main]
+    branches:
+      - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      -uses: actions/chechout@v4
-      -name: Run build
-      run: echo "CI is running"
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Say Hello
+        run: echo "CI workflow is working!"
